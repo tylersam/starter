@@ -1,13 +1,5 @@
-/*
- *= require bootstrap-material-design
- */
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
-.navbar {
-  border-radius: 0px;
-}
 
 #unit_select {
   border-color: rgba(255, 255, 255, 0);
@@ -16,7 +8,7 @@
 }
 
 .link_style {
-  color: rgba(255, 255, 255, .84);
+  //color: rgba(255, 255, 255, .84);
   padding-top: 20px;
   padding-bottom: 20px;
 }
