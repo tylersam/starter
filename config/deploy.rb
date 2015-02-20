@@ -8,10 +8,10 @@ set :repo_url, 'https://github.com/tylersam/hawkeye2.git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/home/tylersam/webapps/hgit awkeye2'
+set :deploy_to, '/home/tylersam/webapps/hawkeye2'
 set :tmp_dir, '/home/tylersam/tmp'
 
-set :rvm_ruby_version, :local
+set :rvm_ruby_version, '2.0.0'
 set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 
 # Default value for :scm is :git
