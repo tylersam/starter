@@ -9,10 +9,12 @@ set :repo_url, 'https://github.com/tylersam/hawkeye2.git'
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/tylersam/webapps/hawkeye2'
+set :shared_path, '/home/tylersam/webapps/hawkeye2/shared'
 set :tmp_dir, '/home/tylersam/tmp'
 
 set :rvm_ruby_version, '2.0.0'
-set :default_env, { rvm_bin_path: '~/.rvm/bin' }
+#set :default_env, { rvm_bin_path: '~/.rvm/bin' }
+set :bundle_flags, ''
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -27,7 +29,7 @@ set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 # set :pty, true
 
 # Default value for :linked_files is []
-# set :linked_files, fetch(:linked_files, []).push('config/database.yml')
+#set :linked_files, fetch(:linked_files, []).push('config/database.yml')
 
 # Default value for linked_dirs is []
 # set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
@@ -38,6 +40,7 @@ set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+set :linked_files, %w{config/database.yml config/local_env.yml}
 
 namespace :deploy do
 

@@ -1,15 +1,22 @@
-@import "bootswatch/paper/variables";
+/*
+ *= require bootstrap-material-design
+ */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-/*
-// Bootstrap body padding for fixed navbar
-body { padding-top: 80px; }
-*/
 
-@import "bootswatch/paper/bootswatch";
+.navbar {
+  border-radius: 0px;
+}
 
 #unit_select {
-  color: black;
-  font-size: 16px;
+  border-color: rgba(255, 255, 255, 0);
+  background-color: transparent;
+  height: 30px;
+}
+
+.link_style {
+  color: rgba(255, 255, 255, .84);
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

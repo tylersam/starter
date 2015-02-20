@@ -5,8 +5,7 @@ gem 'rails', '4.2.0'
 
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.3'
-
-gem 'bootswatch-rails', '~> 3.2.3'
+gem 'bootstrap-material-design'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -37,3 +36,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :jruby]
 
+
+gem 'devise', '~> 3.4.0'
+gem 'omniauth-google-oauth2'
