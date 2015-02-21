@@ -46,8 +46,12 @@ namespace :deploy do
 
   desc "Restart nginx"
   task :restart do
-    run "#{deploy_to}/bin/restart"
+    on "#{deploy_to}" do
+      execute "#{deploy_to}/bin/restart"
+    end
   end
+
+  after :deploy, :restart
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
