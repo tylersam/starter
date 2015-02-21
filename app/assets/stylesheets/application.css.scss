@@ -1,6 +1,22 @@
+// Example using 'Paper' bootswatch
+//
+// First import cerulean variables
+@import "bootswatch/paper/variables";
+
+// Then bootstrap itself
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// Bootstrap body padding for fixed navbar
+//body { padding-top: 60px; }
+
+// And finally bootswatch style itself
+@import "bootswatch/paper/bootswatch";
+
+// Whatever application styles you have go last
+//@import "base";
+
+/*
 #unit_select {
   border-color: rgba(255, 255, 255, 0);
   background-color: transparent;
@@ -12,3 +28,4 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
+*/

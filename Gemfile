@@ -3,8 +3,10 @@ ruby '2.0.0'
 
 gem 'rails', '4.2.0'
 
+
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'bootswatch-rails'
 
 
 gem 'uglifier', '>= 1.3.0'
@@ -31,6 +33,7 @@ group :development, :test do
   gem 'capistrano', '~> 3.3.5'
   gem 'capistrano-rails', '~> 1.1.1'
   gem 'capistrano-rvm'
+  gem 'capistrano-passenger'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
