@@ -1,12 +1,11 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def google_oauth2
-    authorized_emails = ApprovedUser.all.collect{|au| au.email }
 
-    # You need to implement the method below in your model (e.g. app/models/user.rb)
-    data = request.env["omniauth.auth"].info
-    if authorized_emails.include?(data["email"])
-      @user = User.find_for_google_oauth2(request.env["omniauth.auth"], current_user)
+    # You need to implement the method (find_for_google_oauth2) below in your model (e.g. app/models/user.rb)
+    data = request.env['omniauth.auth'].info
+    if User.where(:email => data['email']).exists?
+      @user = User.find_for_google_oauth2(request.env['omniauth.auth'], current_user)
 
       if @user.persisted?
         flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Google"

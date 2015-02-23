@@ -5,7 +5,6 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th>Role</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +14,6 @@
       <tr>
         <td><%= approved_user.name %></td>
         <td><%= approved_user.email %></td>
-        <td><%= approved_user.role %></td>
         <td><%= link_to 'Show', approved_user %></td>
         <td><%= link_to 'Edit', edit_approved_user_path(approved_user) %></td>
         <td><%= link_to 'Destroy', approved_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

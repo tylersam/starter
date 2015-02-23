@@ -1,16 +1,65 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  # GET /approved_users
-  # GET /approved_users.json
+  # GET /users
+  # GET /users.json
   def index
     @users = User.all
   end
 
-  # GET /approved_users/1
-  # GET /approved_users/1.json
+  # GET /users/1
+  # GET /users/1.json
   def show
   end
+
+  # GET /approved_users/new
+  def new
+    @user = User.new
+    #authorize @user
+  end
+
+  # GET /users/1/edit
+  def edit
+    #authorize @user
+  end
+
+  # POST /users
+  # POST /users.json
+  def create
+    params = user_params
+    params[:password] = Devise.friendly_token[0,20]
+
+
+    @user = User.new(params)
+    #authorize @user
+
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render :new }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /users/1
+  # PATCH/PUT /users/1.json
+  def update
+    #authorize @user
+
+    respond_to do |format|
+      if @user.update(approved_user_params)
+        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 
   def destroy
     user = User.find(params[:id])
@@ -29,7 +78,7 @@ class UsersController < ApplicationController
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def approved_user_params
+  def user_params
     params.require(:user).permit(:name, :email, :role)
   end
 

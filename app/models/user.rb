@@ -25,16 +25,14 @@ class User < ActiveRecord::Base
 
     user = User.where(:email => data["email"]).first
 
-    unless user
-      user = User.create(name: data["name"],
-                         first_name: data["first_name"],
-                         last_name: data["last_name"],
-                         email: data["email"],
-                         password: Devise.friendly_token[0,20],
-                         role: :manager,
-                         token: token,
-                         refresh_token: refresh_token
-      )
+    #The user must have already been created in the system
+    if user
+      user.name = data['name']
+      user.first_name = data['first_name']
+      user.last_name = data['last_name']
+      user.token = token
+      user.refresh_token = refresh_token
+      user.save!
     end
     user
   end

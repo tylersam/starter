@@ -1,15 +1,12 @@
 Rails.application.routes.draw do
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
 
-
-
-  devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }
+  devise_for :users, :path_prefix => 'my', :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }
 
 
   resources :approved_users, :users
 
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
   root 'home#index'
 

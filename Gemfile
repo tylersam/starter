@@ -3,9 +3,8 @@ ruby '2.0.0'
 
 gem 'rails', '4.2.0'
 
-
-gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'sass-rails', '~> 5.0'
 gem 'bootswatch-rails'
 
 
@@ -36,9 +35,7 @@ group :development, :test do
   gem 'capistrano-passenger'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :jruby]
-
 
 gem 'devise', '~> 3.4.0'
 gem 'omniauth-google-oauth2'
+gem 'pundit'
