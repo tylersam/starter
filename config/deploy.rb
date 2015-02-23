@@ -47,7 +47,7 @@ namespace :deploy do
   desc "Restart nginx"
   task :restart do
     on roles(:app) do
-      execute "/bin/restart"
+      execute "$HOME/webapps/hawkeye2/bin/restart"
     end
 
 

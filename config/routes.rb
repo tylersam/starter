@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, :path_prefix => 'my', :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }
 
 
-  resources :approved_users, :users
+  resources :users
 
 
   root 'home#index'

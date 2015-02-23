@@ -1,11 +1,12 @@
-class ApprovedUserPolicy < ApplicationPolicy
+class UserPolicy < ApplicationPolicy
+
 
   def index?
-    true
+    @user.manager? or @user.owner? or @user.admin?
   end
 
   def show?
-    @user.manager?
+    @user.manager? or @user.owner? or @user.admin?
   end
 
   def new?
@@ -33,4 +34,6 @@ class ApprovedUserPolicy < ApplicationPolicy
       scope
     end
   end
+
+
 end

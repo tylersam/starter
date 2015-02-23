@@ -28,3 +28,12 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+:focus {
+  outline: 0;
+  box-shadow: inset 0 -2px 0 #2196f3;
+}
+
+.navbar {
+  border-radius: 0px;
+}
