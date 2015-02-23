@@ -32,7 +32,7 @@ module Hawkeye2
       end if File.exists?(env_file)
 
       #separate yml load for prod env
-      prod_env_file = File.join('/home/tylersam/webapps/hawkeye2/hawk2', 'config', 'local_env.yml')
+      prod_env_file = File.join('/home/tylersam/webapps/hawkeye2/shared', 'config', 'local_env.yml')
       YAML.load(File.open(prod_env_file)).each do |key, value|
         ENV[key.to_s] = value
       end if File.exists?(prod_env_file)
