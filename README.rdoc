@@ -1,1 +1,1 @@
-Rebuilding Hawkeye as a learning exercise
+Starter app with rails 4, bootstrap, devise with google omniauth, pundit
